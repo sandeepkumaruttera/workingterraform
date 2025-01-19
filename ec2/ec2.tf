@@ -3,8 +3,8 @@ resource "aws_instance" "db" {
   vpc_security_group_ids = [aws_security_group.allow.id]    #security group are list that why we kept []*
   instance_type = "t3.micro"
 
-    tags = {                                # { flower brucket started that why tags are we called as maps
-        Name = "helloWorld"      
+    tags = {                                # {} flower brucket started that why tags are we called as maps
+        Name = "helloWorld"                             # name is db instance name it is map ...
     } 
 }
 
