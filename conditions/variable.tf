@@ -1,6 +1,6 @@
 variable "instance_name" {
-    type = string
-    default = "DB"
+    default = ["DB","backend","frontend"]
+    type = list
 }
 
 

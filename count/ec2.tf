@@ -3,7 +3,7 @@ resource "aws_instance" "db" {
   count = length(var.instance_name)
   ami = "ami-09c813fb71547fc4f"
   vpc_security_group_ids = [aws_security_group.allow.id]    #security group are list that why we kept []*
-  instance_type = "t3.micro"
+  instance_type = var.instance_name[count.index] == "DB" ? "t3.small" : "t3.micro"
 
     tags = {                                                    # {} flower brucket started that why tags are we called as maps
         Name = var.instance_name[count.index]                   # [count.index]  now it become as list ,it is available as a list at variable

@@ -1,3 +1,5 @@
+need to like this systax for every AMI can use vpc also 
+
 data "aws_ami" "example" {
   executable_users = ["self"]
   most_recent      = true

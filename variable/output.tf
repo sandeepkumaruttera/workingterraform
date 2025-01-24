@@ -1,3 +1,3 @@
-output "public_ip" {
-    value = aws_instance.db
+output "instance_info" {
+    value = aws_instance.db.ami
 }
