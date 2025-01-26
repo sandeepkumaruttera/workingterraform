@@ -6,6 +6,7 @@ resource "aws_instance" "db" {
 }
 
 
+
 resource "aws_security_group" "allow" {
     name = var.security_group_name
     description = var.security_group_description

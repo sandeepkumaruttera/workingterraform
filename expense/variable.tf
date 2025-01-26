@@ -14,7 +14,8 @@ variable "instance_type" {
 }
 
 
-variable "common_tags" {                                        
+variable "common_tags" { 
+    type = map                                       
     default = {                                                                    # tags are list that why written default = {}
         Project = "Expense"
         Environment = "Dev"

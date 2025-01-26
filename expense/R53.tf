@@ -9,3 +9,7 @@ resource "aws_route53_record" "expense" {
   # if records already exists
   allow_overwrite = true
 }
+
+
+
+#route 53 is hosted zone of public and private ip of instances

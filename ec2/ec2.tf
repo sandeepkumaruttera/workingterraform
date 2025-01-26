@@ -9,6 +9,8 @@ resource "aws_instance" "db" {                                               #sy
     } 
 }
 
+       # key = value
+
 
 resource "aws_security_group" "allow" {                                      #need to write at vpc_security_group_ids
     name = "allow"
