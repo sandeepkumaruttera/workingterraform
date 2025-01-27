@@ -4,7 +4,7 @@ locals {
 #    instance_type = "t3.micro"
     instance_type = var.instance_name == "db" ? "t3.small" : "t3.micro"
     tags = {                                                                 # {} flower brucket started that why tags are we called as maps
-        Name = "locals"                                                  # name is db instance name it is map ...   #what ever we keep in tags will create instance name
+        Name = "db"                                                  # name is db instance name it is map ...   #what ever we keep in tags will create instance name
     } 
 }
 
