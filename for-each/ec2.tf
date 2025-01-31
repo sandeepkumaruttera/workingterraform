@@ -7,7 +7,7 @@ resource "aws_instance" "loop-for-each" {
         backend = "t3.small"
         frontend = "t3.micro"
     }
-  ami = data.aws_ami.ami_expense.id
+  ami = data.aws_ami.ami_expense.id                                            # here we required only R53 id only don't forgot
   vpc_security_group_ids = ["sg-0ff5ebb7b4219f91a"]
   instance_type = each.value                            #db = "t3.micro" here key=db ,value = t3.micro for what ever we do here
 

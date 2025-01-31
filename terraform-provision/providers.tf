@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "remote-state-sandeep"                                              
-    key    = "remote-state-demo"
+    bucket = "remote-state-sandeep"
+    key    = "remote-state-for-each"
     region = "us-east-1"
     dynamodb_table = "sandeep-locking"
   }

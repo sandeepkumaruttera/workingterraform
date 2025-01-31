@@ -1,0 +1,15 @@
+- name: nginx
+  hosts: all
+  become: yes
+  tasks:
+    name: install packages
+    ansible.builtin.dnf
+     name: {{iteam}}
+     state: install
+    loop:
+    - mysql
+    - nginx
+    - git
+
+     
+     
