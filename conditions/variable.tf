@@ -7,7 +7,6 @@ variable "instance_name" {
 variable "image_id" {
     type = string
     default = "ami-09c813fb71547fc4f"
-    description = "RHEL Image id"
 }
 
 variable "instance_type" {

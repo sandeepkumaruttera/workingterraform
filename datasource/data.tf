@@ -19,7 +19,7 @@ data "aws_ami" "ami_id" {
     }
 }    
 
-# vpc information 
+# vpc information it is defult vpc id remeber this 
 
 data "aws_vpc" "default" {            
     default = true

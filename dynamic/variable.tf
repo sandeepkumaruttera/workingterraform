@@ -1,16 +1,16 @@
 #dynamic loop value must be set in "list" 
-
+                                                                           
 variable "aws_security_group" {
     type = list
-    default = [
-        {
+    default = [                                                                              # all these are ingrees
+        {                                                                                    ##outbound all are 0 and internet gateway omnly##
           port = 22,
           protocol =  "tcp" 
           cidr_blocks = ["0.0.0.0/0"] 
         },
         {
           port = 8080,
-          protocol =  "tcp" 
+          protocol =  "tcp"                                                          
           cidr_blocks = ["0.0.0.0/0"] 
         },
         {

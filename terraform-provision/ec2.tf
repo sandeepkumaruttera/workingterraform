@@ -20,7 +20,7 @@ resource "aws_instance" "db" {
 
     provisioner "remote-exec" {
        inline = [
-            "sudo dnf install mysql -y",                    #remote state means running  inside remote machine 
+            "sudo dnf install mysql -y",                                           #remote state means running  inside remote machine 
             "sudo dnf install git -y",
             "sudo dnf install nginx -y",
             "sudo systemctl start nginx",            

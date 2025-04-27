@@ -28,3 +28,4 @@ variable "zone_id" {
     type = string                                                      # zone_id is hosted zone there it is available
     default = "Z03688782L8GUNVYZSFY0"
 }
+  #key = value 

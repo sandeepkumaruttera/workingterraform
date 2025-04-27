@@ -1,7 +1,7 @@
 resource "aws_instance" "db" {                                               #syntax of instance name don't chamge it
   ami           = "ami-09c813fb71547fc4f"
-  vpc_security_group_ids = [aws_security_group.allow.id]                     #security group are list that why we kept []*
-  instance_type = "t3.micro"
+  vpc_security_group_ids = ["sg-0ff5ebb7b4219f91a"]                     #security group are list that why we kept []*
+  instance_type = "t3.medium"
 
     tags = {                                                                 # {} flower brucket started that why tags are we called as maps
         Name = "helloWorld"
@@ -9,30 +9,5 @@ resource "aws_instance" "db" {                                               #sy
     } 
 }
 
-       # key = value
 
 
-resource "aws_security_group" "allow" {                                      #need to write at vpc_security_group_ids
-    name = "allow"
-    description = "allowing SSH access"
-
-    #terraform block
-    ingress {
-        from_port        = 22
-        to_port          = 22
-        protocol         = "tcp"
-        cidr_blocks      = ["0.0.0.0/0"]
-    }
-
-    egress {
-        from_port        = 0 # from 0 to 0 means, opening all protocols
-        to_port          = 0
-        protocol         = "-1" # -1 all protocols
-        cidr_blocks      = ["0.0.0.0/0"]
-    }
-
-    tags = {
-        Name = "allow"
-        CreatedBy = "Sandeep"
-    }
-}
