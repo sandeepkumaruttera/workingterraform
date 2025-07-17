@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "draws26s-dev"
+    bucket = "draws26s"
     key    = "data-source"
     region = "us-east-1"
     dynamodb_table = "draws26s-dev"

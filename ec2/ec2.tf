@@ -1,13 +1,20 @@
-resource "aws_instance" "db" {                                               #syntax of instance name don't chamge it
-  ami           = "ami-09c813fb71547fc4f"
-  vpc_security_group_ids = ["sg-0ff5ebb7b4219f91a"]                     #security group are list that why we kept []*
-  instance_type = "t3.medium"
-
-    tags = {                                                                 # {} flower brucket started that why tags are we called as maps
-        Name = "helloWorld"
-        module = "database"                                                  # name is db instance name it is map ...   #what ever we keep in tags will create instance name
-    } 
+resource "aws_key_pair" "tools" {
+  key_name   = "tools"
+   #you can paste the public key directly like this
+  #public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL6ONJth+DzeXbU3oGATxjVmoRjPepdl7sBuPzzQT2Nc sivak@BOOK-I6CR3LQ85Q"
+  public_key = file("~/.ssh/tools.pub")
+  # ~ means windows home directory
 }
 
+resource "aws_instance" "db" {
+  ami                    = "ami-0a7d80731ae1b2435"
+  instance_type          = "t3.medium"
+  vpc_security_group_ids = ["sg-031a4da7fbd0d4df0"]
+  key_name = aws_key_pair.tools.key_name
 
-
+  
+  tags = {
+    Name   = "helloWorld"
+    module = "database"
+  }
+}

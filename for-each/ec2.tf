@@ -14,7 +14,7 @@ resource "aws_instance" "loop-for-each" {
     tags = merge (
         var.common_tags,                                     #merge both tags and instance names
         {
-            Name = each.key
+            Name = each.key                                       #key = value ,db =t3.micro
             module = each.key
         } 
     )     
